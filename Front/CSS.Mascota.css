@@ -1,0 +1,52 @@
+/*Encabezado*/
+h1 {
+    color: white;
+    text-align: center;
+    padding-top: 2px;
+}
+
+/*Imagen de fondo*/
+body {
+    background-image: url('/Front/IMAGENES/front-view-of-beautiful-dog-with-copy-space.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+
+/*Tabla*/
+table, th, td {
+    border: 1px solid orange;
+    border-collapse: collapse;
+  }
+
+th, td {
+    background-color: #060EAF;
+    color: white;
+  }
+
+/* Lista de interface */
+  ol {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(168, 26, 26);
+  }
+  
+  li {
+    float: right;
+  }
+  
+  li a {
+    font-size: larger;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 40px;
+    text-decoration: none;
+  }
+  
+  li a:hover {
+    background-color: brown;
+  }
