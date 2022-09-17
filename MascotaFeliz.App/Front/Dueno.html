@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro Propietario</title>
     <link rel="stylesheet" href="CSS.Dueno.css">
-    <link rel="icon" type="image/x-icon" href="IMAGENES/WhatsApp Image 2022-09-03 at 4.28.57 PM.jpeg" 
-</head>
+    <link rel="icon" type="image/x-icon" href="IMAGENES/WhatsApp Image 2022-09-03 at 4.28.57 PM.jpeg" </head>
+
 <body>
     <h1 style="margin-top: 30px;"></h1>
     <ol>
@@ -49,6 +49,33 @@
             <td>EmaSam</td>
         </tr>
     </table>
+
+    <form action="/cgi-bin/scriptdelformulario.pl" method="get">
+
+        Nombres: <input type="text" id="nombres" />
+        <br>
+        Apelidos: <input type="text" id="apellidos" />
+        <br>
+        Direccion: <input type="text" id="direccion" />
+        <br>
+        Telefono <input type="text" id="telefono" />
+        <br>
+        Contraseña: <input type="password" name="contrasena" />
+        <br>
+
+
+        <input type="radio" name="mascotas" value="perro" /> Perro
+        <input type="radio" name="mascotas" value="gato" /> Gato
+        <input type="radio" name="mascotas" value="ave" /> Ave
+        <input type="radio" name="mascotas" value="reptil" /> Reptil
+
+
+        <button type="submit">Envíar</button>
+
+    </form>
+
+
+
     <p style="margin-left: 70px;">Estoy de acuerdo con <a href="#">Terminos y Condiciones</a></p>
     <input class="botons" type="submit" values="Registrar"
         style="margin-top: 10px;margin-left: 70px;padding:10px 20px ">
