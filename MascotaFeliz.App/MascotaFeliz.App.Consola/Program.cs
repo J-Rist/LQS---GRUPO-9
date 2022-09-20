@@ -10,18 +10,23 @@ namespace MascotaFeliz.App.Consola
         private static IRepositorioDueno _repoDueno = new RepositorioDueno(new Persistencia.AppContext());
         private static IRepositorioVeterinario _repoVeterinario = new RepositorioVeterinario(new Persistencia.AppContext());
         private static IRepositorioMascota _repoMascota = new RepositorioMascota(new Persistencia.AppContext());
+        private static IRepositorioVisitaPyP _repoVisitaPyP = new RepositorioVisitaPyP(new Persistencia.AppContext());
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World");
             //AddDueno();
             //AddVeterinario();
             //AddMascota();
+            //AddVisitaPyP();
+            //AddHistoria();
             //BuscarDueno(1);
             //BuscarMascota(1);
             //ListarMascotasFiltro();
-            BuscarMascotas();
+            //BuscarMascotas();
         }
 
+
+        // AGREGAR DUEÑO
         private static void AddDueno()
         {
             var dueno = new Dueno
@@ -35,6 +40,7 @@ namespace MascotaFeliz.App.Consola
             _repoDueno.AddDueno(dueno);
         }
 
+        // AGREGAR VETERINARIO
         private static void AddVeterinario()
         {
             var veterinario = new Veterinario
@@ -48,6 +54,7 @@ namespace MascotaFeliz.App.Consola
             _repoVeterinario.AddVeterinario(veterinario);
         }
 
+        // AGREGAR MASCOTA
         private static void AddMascota()
         {
             var mascota = new Mascota
@@ -59,6 +66,23 @@ namespace MascotaFeliz.App.Consola
             };
             _repoMascota.AddMascota(mascota);
         }
+
+        // AGREGAR VISITAPYP
+        private static void AddVisitaPyP()
+        {
+            var visitapyp = new VisitaPyP
+            {
+                Temperatura = 34,
+                Peso = 20,
+                FrecuenciaRespiratoria = 30,
+                FrecuenciaCardiaca = 70,
+                EstadoAnimo = "Feliz",
+                FechaVisita = new DateTime(2014 ,12 ,2, 3, 30, 40),
+                Recomendaciones = "Sacarlo a pasear",
+            };
+            _repoVisitaPyP.AddVisitaPyP(visitapyp);
+        }
+
 
          private static void BuscarDueno(int idDueno)
         {
