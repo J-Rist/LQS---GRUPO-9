@@ -9,20 +9,25 @@ using MascotaFeliz.App.Persistencia;
 
 namespace MascotaFeliz.App.Frontend.Pages
 {
-    public class ListaVeterinariosModel : PageModel
+    public class DetallesVeterinariosModel : PageModel
     {
         private readonly IRepositorioVeterinario _repoVeterinario;
-
-        public IEnumerable<Veterinario> listaVeterinarios {get;set;}
-
-        public ListaVeterinariosModel()
+        public Veterinario veterinario {get;set;}
+        public DetallesVeterinariosModel()
         {
             this. _repoVeterinario = new RepositorioVeterinario(new Persistencia.AppContext());
         }
-
-        public void OnGet()
+        public IActionResult OnGet(int veterinarioId)
         {
-            listaVeterinarios = _repoVeterinario.GetAllVeterinarios();
+            veterinario = _repoVeterinario.GetVeterinario(veterinarioId);
+            if (veterinario == null)
+            {
+                return RedirectToPage("./NotFound");
+            }
+            else
+            {
+                return Page();
+            }
         }
     }
 }

@@ -18,13 +18,22 @@ body {
 table, th, td {
     border: 1px solid orange;
     border-collapse: collapse;
-    
   }
 
-th, td {
+
+td {
     background-color: #060EAF;
     color: white;
   }
+
+th {
+  background-color: #04085c;
+  color: whitesmoke;
+}
+
+th.list{
+  text-align: center;
+}
 
 /* Lista de interface */
   ol {
@@ -55,4 +64,5 @@ th, td {
   a{
     background-color: coral;
   }
+
 

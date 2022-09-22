@@ -9,31 +9,44 @@
 <hr>
 <br>
 <table class="table">
+    <tr>
+            <th></th>
+            <th class="list">Nombres</th>
+            <th class="list">Apellidos</th>
+            <th class="list">Dirección</th>
+            <th class="list">Teléfono</th>
+            <th class="list">Email</th>
+            <th class="list">Detalles</th>
+            <th class="list">Editar</th>
+    </tr>
     @foreach (var dueno in Model.listaDuenos)
     {
         <tr>
-
-            <td>@dueno.Id</td>
-            <td>@dueno.Nombres</td>
-            <td>@dueno.Apellidos</td>
-            <td>@dueno.Direccion</td>
-            <td>@dueno.Telefono</td>
-            <td>@dueno.Correo</td>
+        
+        <td>@dueno.Id</td>
+        <td>@dueno.Nombres</td>
+        <td>@dueno.Apellidos</td>
+        <td>@dueno.Direccion</td>
+        <td>@dueno.Telefono</td>
+        <td>@dueno.Correo</td>
 
         <td>
-                <a class="btn btn-primary table-btn" style="background-color: coral;" asp-page ="./DetallesDuenos" asp-route-duenoId="@dueno.Id">
-                    Detalle Dueño
-                </a>
-            </td>
-            <td>
-                <a class="btn btn-primary table-btn" style="background-color: coral;" asp-page="./EditarDuenos" asp-route-duenoId="@dueno.Id">
-                    Editar Dueño
-                </a>
-            </td>
+            <a  asp-page="./DetallesDuenos"
+            asp-route-duenoId="@dueno.Id">
+                <img style="width: 40px; height: 40px;" title="Detalles Dueños" src="~/css/Detalles.png">
+            </a>
+        </td>
+        <td>
+            <a asp-page="./EditarDuenos"
+            asp-route-duenoId="@dueno.Id">
+                <img style="width: 40px; height: 40px;" title="Editar Dueños" src="~/css/editar.png">
+            </a>
+        </td>
         </tr>
-        
+
     }
 </table>
 
 
-<a class = "btn btn-primary table-btn" style="background-color: brown; margin-left: 20px;" asp-page="./EditarDuenos" class="btn-default">Adicionar Dueño</a> 
+<a class="btn btn-primary table-btn" style="background-color: brown; margin-left: 20px;" asp-page="./EditarDuenos"
+    class="btn-default">Adicionar Dueño</a>
