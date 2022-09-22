@@ -11,6 +11,7 @@ namespace MascotaFeliz.App.Consola
         private static IRepositorioVeterinario _repoVeterinario = new RepositorioVeterinario(new Persistencia.AppContext());
         private static IRepositorioMascota _repoMascota = new RepositorioMascota(new Persistencia.AppContext());
         private static IRepositorioVisitaPyP _repoVisitaPyP = new RepositorioVisitaPyP(new Persistencia.AppContext());
+        private static IRepositorioHistoria _repoHistoria = new RepositorioHistoria(new Persistencia.AppContext());
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World");
@@ -83,6 +84,15 @@ namespace MascotaFeliz.App.Consola
             _repoVisitaPyP.AddVisitaPyP(visitapyp);
         }
 
+        // AGREGAR HISTORIA
+        private static void AddHistoria()
+        {
+            var historia = new Historia
+            {
+                FechaInicial = new DateTime(2014 ,12 ,2, 3, 30, 40),
+            };
+            _repoHistoria.AddHistoria(historia);
+        }
 
          private static void BuscarDueno(int idDueno)
         {
@@ -119,6 +129,13 @@ namespace MascotaFeliz.App.Consola
                 Console.WriteLine(m.Nombre + " " + m.Color + " " + m.Especie + " " + m.Raza + " "); 
             }
             Console.WriteLine("========================================================");
+        }
+
+        // ASIGNAR UN VETERINARIO
+        private static void AsignarVeterinario()
+        {
+            var veterinario = _repoMascota.AsignarVeterinario(1,15)
+            console.WriteLine(veterinario.Nombres + " " +veterinario.Apellidos);
         }
     }
 }

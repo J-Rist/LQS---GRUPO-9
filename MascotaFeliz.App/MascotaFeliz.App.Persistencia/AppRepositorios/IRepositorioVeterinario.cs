@@ -6,7 +6,7 @@ using MascotaFeliz.App.Dominio;
 
 namespace MascotaFeliz.App.Persistencia
 {
-    public interface IRepositorioVeterinario
+    public interface IRepositorioVeterinario 
     {
         IEnumerable<Veterinario> GetAllVeterinarios();
         Veterinario AddVeterinario(Veterinario veterinario);
@@ -15,5 +15,7 @@ namespace MascotaFeliz.App.Persistencia
         Veterinario GetVeterinario(int idVeterinario);
         IEnumerable<Veterinario> GetVeterinariosPorFiltro(string filtro);
         
+        //Veterinario AsignarVeterinario(int idMascota, int idVeterinario);
+    
     }
 }
