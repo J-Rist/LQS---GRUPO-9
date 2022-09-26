@@ -9,6 +9,16 @@
 <hr>
 <br>
 <table class="table">
+    <tr>
+            <th></th>
+            <th class="list">Nombres</th>
+            <th class="list">Apellidos</th>
+            <th class="list">Dirección</th>
+            <th class="list">Teléfono</th>
+            <th class="list">Tarjeta P.</th>
+            <th class="list">Detalles</th>
+            <th class="list">Editar</th>
+    </tr>
     @foreach (var veterinario in Model.listaVeterinarios)
     {
         <tr>
@@ -21,15 +31,17 @@
             <td>@veterinario.TarjetaProfesional</td>
 
         <td>
-                <a class="btn btn-primary table-btn" style="background-color: coral;" asp-page ="./DetallesVeterinarios" asp-route-veterinarioId="@veterinario.Id">
-                    Detalle Veterinario
-                </a>
-            </td>
-            <td>
-                <a class="btn btn-primary table-btn" style="background-color: coral;" asp-page="./EditarVeterinarios" asp-route-veterinarioId="@veterinario.Id">
-                    Editar Veterinario
-                </a>
-            </td>
+            <a  asp-page="./DetallesVeterinarios"
+            asp-route-duenoId="@veterinario.Id">
+                <img style="width: 40px; height: 40px;" title="Detalles Veterinarios" src="~/css/Detalles.png">
+            </a>
+        </td>
+        <td>
+            <a asp-page="./EditarVeterinarios"
+            asp-route-duenoId="@veterinario.Id">
+                <img style="width: 40px; height: 40px;" title="Editar Veterinarios" src="~/css/editar.png">
+            </a>
+        </td>
         </tr>
         
     }
