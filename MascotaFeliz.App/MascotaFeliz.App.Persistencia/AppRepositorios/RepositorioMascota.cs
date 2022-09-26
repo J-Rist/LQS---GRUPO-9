@@ -75,6 +75,7 @@ namespace MascotaFeliz.App.Persistencia
             }
             return mascotaEncontrado;
         }   
+        
         /*
          public Veterinario AsignarVeterinario(int idMascota, int idVeterinario)
         {
@@ -90,6 +91,25 @@ namespace MascotaFeliz.App.Persistencia
                 return veterinarioEncontrado;
             }
             return null;
-        } */
+        } 
+        public Dueno AsignarDueno(int idMascota, int idDueno)
+        {
+            var mascotaEncontrado = _appContext.Mascotas.FirstOrDefault(m => m.Id == idMascota);
+            if (mascotaEncontrado != null)
+            {
+                var duenoEncontrado = _appContext.Duenos.FirstOrDefault(d => d.Id == idDueno);
+                if (mascotaEncontrado != null)
+                {
+                    mascotaEncontrado.Dueno = duenoEncontrado;
+                    _appContext.SaveChanges();
+                }
+                return duenoEncontrado;
+            }
+            return null;
+        }  
+        .Include("Dueno").Include("Veterinario").Include("Historia")
+        */
+        
+
     }
 }

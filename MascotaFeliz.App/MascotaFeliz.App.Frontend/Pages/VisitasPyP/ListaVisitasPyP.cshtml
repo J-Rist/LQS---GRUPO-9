@@ -1,0 +1,61 @@
+﻿@page
+@model MascotaFeliz.App.Frontend.Pages.ListaVisitasPyPModel
+@{
+}
+
+<h1 style="margin-top: 40px"></h1>
+<hr>
+<h1 class="display-4">Listado de VisitasPyP</h1>
+<hr>
+<br>
+<table class="table">
+    <tr>
+            <th></th>
+            <th class="list">Id</th>
+            <th class="list">Temperatura</th>
+            <th class="list">Peso</th>
+            <th class="list">Frecuencia R.</th>
+            <th class="list">Frecuencia C.</th>
+            <th class="list">Estado</th>
+            <th class="list">Fecha V.</th>
+            <th class="list">Recomendaciones</th>
+            <th class="list">Detalles</th>
+            <th class="list">Editar</th>
+
+    </tr>
+    @foreach (var visitapyp in Model.listaVisitasPyP)
+    {
+        <tr>
+
+            <td>@visitapyp.Id</td>
+            <td>@visitapyp.Temperatura</td>
+            <td>@visitapyp.Peso</td>
+            <td>@visitapyp.FrecuenciaRespiratoria</td>
+            <td>@visitapyp.FrecuenciaCardiaca</td>
+            <td>@visitapyp.EstadoAnimo</td>
+            <td>@visitapyp.FechaVisita</td>
+            <td>@visitapyp.Recomendaciones</td>
+            <td></td>
+            
+            
+
+        <td>
+            <a  asp-page="./DetallesVisitasPyP"
+            asp-route-duenoId="@visitapyp.Id">
+                <img style="width: 40px; height: 40px;" title="Detalles VisitasPyP" src="~/css/Detalles.png">
+            </a>
+        </td>
+        <td>
+            <a asp-page="./EditarVisitasPyP"
+            asp-route-duenoId="@visitapyp.Id">
+                <img style="width: 40px; height: 40px;" title="Editar VisitasPyP" src="~/css/editar.png">
+            </a>
+        </td>
+        </tr>
+
+    }
+</table>
+
+
+<a class="btn btn-primary table-btn" style="background-color: brown; margin-left: 20px;" asp-page="./EditarVisitasPyP"
+    class="btn-default">Adicionar VisitasPyP</a> 

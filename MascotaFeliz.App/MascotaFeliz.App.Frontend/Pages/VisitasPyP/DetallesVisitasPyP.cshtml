@@ -1,0 +1,38 @@
+﻿@page
+@model MascotaFeliz.App.Frontend.Pages.DetallesVisitasPyPModel
+@{
+}
+<h1 style="margin-top: 30px;"></h1>
+<h1>Detalles de la Visita</h1>
+<hr>
+<h1 style="margin-bottom: 30px;"></h1>
+
+<div style="background-color: darkseagreen;" class="lista">
+    <div>
+        Id: @Model.visitapyp.Id
+    </div>
+    <div>
+        Temperatura: @Model.visitapyp.Temperatura
+    </div>
+    <div>
+        Peso: @Model.visitapyp.Peso
+    </div>
+    <div>
+        Frecuencia Respiratoria: @Model.visitapyp.FrecuenciaRespiratoria
+    </div>
+    <div>
+        Frecuencia Cardiaca: @Model.visitapyp.FrecuenciaCardiaca
+    </div>
+    <div>
+        Estadod de Animo: @Model.visitapyp.EstadoAnimo
+    </div>
+    <div>
+        Fecha de Visita: @Model.visitapyp.FechaVisita
+    </div>
+    <div>
+        Recomendaciones: @Model.visitapyp.Recomendaciones
+    </div>
+</div>
+<h1 style="margin-top: 190px;"></h1>
+<a  asp-page="./ListaVisitasPyP" class="btn-default">
+    <-- Lista de Visitas</a>

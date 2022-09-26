@@ -1,0 +1,31 @@
+﻿@page
+@model MascotaFeliz.App.Frontend.Pages.EditarVisitasPyPModel
+@{
+}
+<h2>Agregar o editar VisitasPyP</h2>
+
+<form method="post" >
+    <div class="form-group">
+        <input type="hidden" asp-for = "visitapyp.Id" />
+        <label asp-for="visitapyp.Id"></label>
+        <input asp-for="visitapyp.Id" class="form-control">
+        <label asp-for="visitapyp.Temperatura"></label>
+        <input asp-for="visitapyp.Temperatura" class="form-control">
+        <label asp-for="visitapyp.Peso"></label>
+        <input asp-for="visitapyp.Peso" class="form-control">
+        <label asp-for="visitapyp.FrecuenciaRespiratoria"></label>
+        <input asp-for="visitapyp.FrecuenciaRespiratoria" class="form-control">
+        <label asp-for="visitapyp.FrecuenciaCardiaca"></label>
+        <input asp-for="visitapyp.FrecuenciaCardiaca" class="form-control">
+        <label asp-for="visitapyp.EstadoAnimo"></label>
+        <input asp-for="visitapyp.EstadoAnimo" class="form-control">
+        <label asp-for="visitapyp.FechaVisita"></label>
+        <input asp-for="visitapyp.FechaVisita" class="form-control">
+        <label asp-for="visitapyp.Recomendaciones"></label>
+        <input asp-for="visitapyp.Recomendaciones" class="form-control">
+
+        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+    </div>
+</form>
+
+<a asp-page="./ListaVisitasPyP" class="btn-default"><--  Lista de VisitasPyP</a>

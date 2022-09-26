@@ -137,5 +137,12 @@ namespace MascotaFeliz.App.Consola
             var veterinario = _repoMascota.AsignarVeterinario(1,15)
             console.WriteLine(veterinario.Nombres + " " +veterinario.Apellidos);
         }
+
+        // ASIGNAR UN DUEÑO
+        private static void AsignarDueno()
+        {
+            var dueno = _repoDueno.AsignarDueno(1,15)
+            console.WriteLine(Dueno.Nombres + " " +Dueno.Apellidos);
+        }
     }
 }

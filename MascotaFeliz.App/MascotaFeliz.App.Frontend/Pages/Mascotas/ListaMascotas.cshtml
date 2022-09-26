@@ -9,6 +9,15 @@
 <hr>
 <br>
 <table class="table">
+    <tr>
+            <th></th>
+            <th class="list">Nombre</th>
+            <th class="list">Color</th>
+            <th class="list">Especie</th>
+            <th class="list">Raza</th>
+            <th class="list">Detalles</th>
+            <th class="list">Editar</th>
+    </tr>
     @foreach (var mascota in Model.listaMascotas)
     {
         <tr>
@@ -17,18 +26,21 @@
             <td>@mascota.Nombre</td>
             <td>@mascota.Color</td>
             <td>@mascota.Especie</td>
+            <td>@mascota.Raza</td>
             
 
         <td>
-                <a class="btn btn-primary table-btn" style="background-color: coral;" asp-page ="./DetallesMascotas" asp-route-mascotaId="@mascota.Id">
-                    Detalle Mascota
-                </a>
-            </td>
-            <td>
-                <a class="btn btn-primary table-btn" style="background-color: coral;" asp-page="./EditarMascotas" asp-route-mascotaId="@mascota.Id">
-                    Editar Mascota
-                </a>
-            </td>
+            <a  asp-page="./DetallesMascotas"
+            asp-route-duenoId="@mascota.Id">
+                <img style="width: 40px; height: 40px;" title="Detalles Mascotas" src="~/css/Detalles.png">
+            </a>
+        </td>
+        <td>
+            <a asp-page="./EditarMascotas"
+            asp-route-duenoId="@mascota.Id">
+                <img style="width: 40px; height: 40px;" title="Editar Mascotas" src="~/css/editar.png">
+            </a>
+        </td>
         </tr>
         
     }
